@@ -31,7 +31,7 @@
             line-height: 1.6;
         }
 
-        /* Navegación */
+        /* Navegación y Logotipo */
         header {
             background-color: var(--white);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -51,6 +51,9 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--primary-color);
@@ -105,26 +108,37 @@
             background-color: var(--secondary-color);
             border-radius: 0 0 20px 20px;
             margin-bottom: 40px;
+            background-image: linear-gradient(rgba(215, 204, 200, 0.8), rgba(215, 204, 200, 0.8)), url('https://images.unsplash.com/photo-1602928321679-560bb453f190?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
         }
 
         #inicio h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--text-dark);
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        #inicio p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
 
         .disclaimer-box {
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 15px;
             border-radius: 8px;
-            max-width: 600px;
+            max-width: 650px;
             margin: 20px auto;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 25px;
+            padding: 12px 30px;
             background-color: var(--primary-color);
             color: var(--white);
             text-decoration: none;
@@ -132,6 +146,7 @@
             font-weight: bold;
             margin-top: 20px;
             transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         .btn:hover {
@@ -141,45 +156,42 @@
         /* Catálogo */
         .grid-catalogo {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
 
         .card-vela {
             background: var(--white);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
             text-align: center;
-            padding-bottom: 20px;
+            padding-bottom: 25px;
             transition: transform 0.3s;
         }
 
         .card-vela:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
         }
 
-        .imagen-placeholder {
+        .img-vela {
             width: 100%;
-            height: 250px;
-            background-color: var(--secondary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-style: italic;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--primary-color);
         }
 
         .card-vela h3 {
-            margin: 15px 0 5px;
+            margin: 15px 0 8px;
             color: var(--text-dark);
+            font-size: 1.3rem;
         }
 
         .card-vela p {
-            font-size: 0.9rem;
-            padding: 0 15px;
-            color: #666;
+            font-size: 0.95rem;
+            padding: 0 20px;
+            color: #555;
         }
 
         /* Nosotros & Contacto */
@@ -198,11 +210,22 @@
             margin-top: 30px;
             background: var(--white);
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-size: 1.1rem;
+        }
+
+        .enlace-contacto {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .enlace-contacto:hover {
+            text-decoration: underline;
         }
 
         /* Políticas */
@@ -218,8 +241,9 @@
         }
 
         .politicas-contenido h3 {
-            margin-top: 20px;
+            margin-top: 25px;
             color: var(--text-dark);
+            font-size: 1.2rem;
         }
 
         /* Footer */
@@ -227,18 +251,23 @@
             background-color: var(--text-dark);
             color: var(--white);
             text-align: center;
-            padding: 30px 20px;
-            font-size: 0.85rem;
+            padding: 40px 20px;
+            font-size: 0.9rem;
         }
 
         footer p {
-            margin: 5px 0;
+            margin: 8px 0;
         }
 
         .footer-legal {
-            color: #aaa;
-            margin-top: 15px;
-            font-size: 0.8rem;
+            color: #ccc;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            border-top: 1px solid #555;
+            padding-top: 15px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Responsive */
@@ -251,9 +280,13 @@
                 margin-top: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 10px;
             }
             #inicio {
                 padding-top: 180px;
+            }
+            #inicio h1 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -262,7 +295,14 @@
 
     <header>
         <nav>
-            <a href="#inicio" class="logo">Velas Ande</a>
+            <a href="#inicio" class="logo">
+                <!-- Logotipo SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10.1 2.1a2 2 0 0 1 3.8 0c1.3 3.3.4 5.9-1.9 7.9H8c-2.3-2-3.2-4.6-1.9-7.9z"/>
+                    <rect x="7" y="10" width="10" height="12" rx="2"/>
+                </svg>
+                Velas Ande
+            </a>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#catalogo">Catálogo</a></li>
@@ -278,7 +318,7 @@
         <p class="texto-centrado">Explora nuestra colección de velas aromáticas artesanales. Diseño exclusivo para crear ambientes de paz y armonía.</p>
         
         <div class="disclaimer-box">
-            <strong>Aviso de Transparencia:</strong> Este sitio web funciona exclusivamente como un catálogo digital para exhibir nuestros modelos. No realizamos ventas, transacciones ni cobros a través de esta plataforma.
+            <strong>Aviso de Transparencia:</strong> Este sitio web funciona exclusivamente como un catálogo digital para exhibir nuestros modelos de velas. No realizamos ventas, transacciones ni cobros en línea a través de esta plataforma.
         </div>
 
         <a href="#catalogo" class="btn">Ver Catálogo de Velas</a>
@@ -289,20 +329,41 @@
         <p class="texto-centrado">¿Te interesa alguno de nuestros modelos? Contáctanos para consultas sobre disponibilidad y distribución en Costa Rica.</p>
         
         <div class="grid-catalogo">
+            <!-- Vela 1 -->
             <div class="card-vela">
-                <div class="imagen-placeholder">[ Imagen: Vela Lavanda ]</div>
-                <h3>Vela Relajación Lavanda</h3>
-                <p>Cera natural, ideal para el descanso profundo.</p>
+                <img src="https://images.unsplash.com/photo-1605651202774-7d573fd3f12d?auto=format&fit=crop&w=600&q=80" alt="Vela Relajación Lavanda" class="img-vela">
+                <h3>Relajación Lavanda</h3>
+                <p>Cera natural en tonos púrpuras, ideal para el descanso profundo y la meditación.</p>
             </div>
+            <!-- Vela 2 -->
             <div class="card-vela">
-                <div class="imagen-placeholder">[ Imagen: Vela Cítrica ]</div>
-                <h3>Vela Energía Cítrica</h3>
-                <p>Aromas vibrantes de naranja y limón para tus mañanas.</p>
+                <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80" alt="Vela Energía Cítrica" class="img-vela">
+                <h3>Energía Cítrica</h3>
+                <p>Aromas vibrantes de naranja y limón para llenar de vitalidad tus mañanas.</p>
             </div>
+            <!-- Vela 3 -->
             <div class="card-vela">
-                <div class="imagen-placeholder">[ Imagen: Vela Bosque ]</div>
-                <h3>Vela Bosque Andino</h3>
-                <p>Toques de pino y madera para conectar con la naturaleza.</p>
+                <img src="https://images.unsplash.com/photo-1596433809252-2591b72e5033?auto=format&fit=crop&w=600&q=80" alt="Vela Bosque Andino" class="img-vela">
+                <h3>Bosque Andino</h3>
+                <p>Toques rústicos de pino y madera fresca para conectar con la naturaleza.</p>
+            </div>
+            <!-- Vela 4 -->
+            <div class="card-vela">
+                <img src="https://images.unsplash.com/photo-1608181114410-db2ec0a06a6f?auto=format&fit=crop&w=600&q=80" alt="Vela Canela y Especias" class="img-vela">
+                <h3>Canela y Especias</h3>
+                <p>Un aroma cálido y envolvente, perfecto para reuniones y tardes de lluvia.</p>
+            </div>
+            <!-- Vela 5 -->
+            <div class="card-vela">
+                <img src="https://images.unsplash.com/photo-1614210609650-7dc5e14316d3?auto=format&fit=crop&w=600&q=80" alt="Vela Vainilla Dulce" class="img-vela">
+                <h3>Vainilla Dulce</h3>
+                <p>Suavidad y elegancia en color blanco, un clásico que nunca pasa de moda.</p>
+            </div>
+            <!-- Vela 6 -->
+            <div class="card-vela">
+                <img src="https://images.unsplash.com/photo-1599598425947-330026e2e2a4?auto=format&fit=crop&w=600&q=80" alt="Vela Café de Altura" class="img-vela">
+                <h3>Café de Altura</h3>
+                <p>El intenso y delicioso aroma del café tostado para despertar tus sentidos.</p>
             </div>
         </div>
     </section>
@@ -317,10 +378,10 @@
     <section id="contacto">
         <h2 class="section-title">Contáctanos</h2>
         <div class="contacto-info">
-            <p>Estamos aquí para atender tus dudas sobre nuestros catálogos.</p>
-            <p>📍 <strong>Ubicación:</strong> San José, Costa Rica (Sujeto a cita previa)</p>
+            <p>Estamos aquí para atender tus dudas sobre nuestros catálogos y distribución.</p>
+            <p>📍 <strong>Ubicación:</strong> Costa Rica (Atención y entregas a coordinar)</p>
             <p>📧 <strong>Correo:</strong> info@ande-velas.vercel.app</p>
-            <p>📱 <strong>WhatsApp:</strong> +506 0000-0000</p>
+            <p>📱 <strong>WhatsApp:</strong> <a href="https://wa.me/50683902559" class="enlace-contacto" target="_blank">+506 8390-2559</a></p>
             <p>🕒 <strong>Horario:</strong> Lunes a Viernes de 8:00 AM a 5:00 PM</p>
         </div>
     </section>
@@ -329,22 +390,23 @@
         <h2 class="section-title">Políticas de Privacidad y Uso Legal</h2>
         <div class="politicas-contenido">
             <h3>1. Naturaleza del Sitio</h3>
-            <p>El dominio ande-velas.vercel.app opera de manera estrictamente informativa como un catálogo digital. No recolectamos información de tarjetas de crédito ni procesamos pagos en línea.</p>
+            <p>El dominio ande-velas.vercel.app opera de manera estrictamente informativa como un catálogo digital. No recolectamos información de tarjetas de crédito ni procesamos pagos en línea en esta plataforma.</p>
             
             <h3>2. Uso de Datos</h3>
-            <p>Si el usuario decide contactarnos vía correo electrónico o teléfono, sus datos serán utilizados exclusivamente para dar respuesta a su consulta. No compartimos, vendemos ni distribuimos información de contacto a terceros.</p>
+            <p>Si el usuario decide contactarnos vía correo electrónico o WhatsApp, sus datos serán utilizados exclusivamente para dar respuesta a su consulta comercial. No compartimos, vendemos ni distribuimos información de contacto a terceros.</p>
             
             <h3>3. Cookies</h3>
-            <p>Este sitio web puede utilizar cookies técnicas básicas proporcionadas por nuestra plataforma de alojamiento para asegurar el correcto funcionamiento técnico de la página. No utilizamos cookies de rastreo de terceros.</p>
+            <p>Este sitio web puede utilizar cookies técnicas básicas proporcionadas por nuestra plataforma de alojamiento (Vercel) para asegurar el correcto funcionamiento técnico de la página. No utilizamos cookies de rastreo publicitario de terceros.</p>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Velas Ande. Todos los derechos reservados. | Costa Rica.</p>
-        <p class="footer-legal">
-            <strong>Anunciante Verificado Google Ads:</strong> Joao Da Silva Pereira <br>
+        <div class="footer-legal">
+            <strong>Anunciante Verificado Google Ads:</strong><br>
+            Joao Da Silva Pereira <br>
             Documento de Identidad: 10941802709
-        </p>
+        </div>
     </footer>
 
 </body>
