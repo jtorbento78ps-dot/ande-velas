@@ -1,1 +1,351 @@
-haha23
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo digital de Velas Ande. Fabricantes de velas aromáticas en Costa Rica.">
+    <title>Velas Ande | Catálogo Digital</title>
+    <style>
+        :root {
+            --primary-color: #8D6E63; /* Marrón cálido */
+            --secondary-color: #D7CCC8; /* Beige */
+            --bg-color: #FAFAFA; /* Crema muy claro */
+            --text-dark: #3E2723; /* Marrón oscuro para textos */
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navegación */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Secciones Generales */
+        section {
+            padding: 100px 20px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 30px;
+        }
+
+        /* Inicio (Hero) */
+        #inicio {
+            text-align: center;
+            padding-top: 150px;
+            padding-bottom: 100px;
+            background-color: var(--secondary-color);
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+        }
+
+        #inicio h1 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .disclaimer-box {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--text-dark);
+        }
+
+        /* Catálogo */
+        .grid-catalogo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card-vela {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            padding-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .card-vela:hover {
+            transform: translateY(-5px);
+        }
+
+        .imagen-placeholder {
+            width: 100%;
+            height: 250px;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-style: italic;
+        }
+
+        .card-vela h3 {
+            margin: 15px 0 5px;
+            color: var(--text-dark);
+        }
+
+        .card-vela p {
+            font-size: 0.9rem;
+            padding: 0 15px;
+            color: #666;
+        }
+
+        /* Nosotros & Contacto */
+        .texto-centrado {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .contacto-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Políticas */
+        #politicas {
+            background-color: var(--white);
+            padding: 60px 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .politicas-contenido {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .politicas-contenido h3 {
+            margin-top: 20px;
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .footer-legal {
+            color: #aaa;
+            margin-top: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            #inicio {
+                padding-top: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#inicio" class="logo">Velas Ande</a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#politicas">Políticas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <h1>Iluminamos tus espacios con aromas únicos</h1>
+        <p class="texto-centrado">Explora nuestra colección de velas aromáticas artesanales. Diseño exclusivo para crear ambientes de paz y armonía.</p>
+        
+        <div class="disclaimer-box">
+            <strong>Aviso de Transparencia:</strong> Este sitio web funciona exclusivamente como un catálogo digital para exhibir nuestros modelos. No realizamos ventas, transacciones ni cobros a través de esta plataforma.
+        </div>
+
+        <a href="#catalogo" class="btn">Ver Catálogo de Velas</a>
+    </section>
+
+    <section id="catalogo">
+        <h2 class="section-title">Nuestros Modelos</h2>
+        <p class="texto-centrado">¿Te interesa alguno de nuestros modelos? Contáctanos para consultas sobre disponibilidad y distribución en Costa Rica.</p>
+        
+        <div class="grid-catalogo">
+            <div class="card-vela">
+                <div class="imagen-placeholder">[ Imagen: Vela Lavanda ]</div>
+                <h3>Vela Relajación Lavanda</h3>
+                <p>Cera natural, ideal para el descanso profundo.</p>
+            </div>
+            <div class="card-vela">
+                <div class="imagen-placeholder">[ Imagen: Vela Cítrica ]</div>
+                <h3>Vela Energía Cítrica</h3>
+                <p>Aromas vibrantes de naranja y limón para tus mañanas.</p>
+            </div>
+            <div class="card-vela">
+                <div class="imagen-placeholder">[ Imagen: Vela Bosque ]</div>
+                <h3>Vela Bosque Andino</h3>
+                <p>Toques de pino y madera para conectar con la naturaleza.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <h2 class="section-title">Sobre Velas Ande</h2>
+        <p class="texto-centrado">
+            Somos fabricantes apasionados de velas aromáticas desde el año 2020. Ubicados con orgullo en Costa Rica, dedicamos nuestro trabajo a crear productos de alta calidad para nuestros clientes en todo el territorio nacional. Cada vela de Velas Ande está elaborada con dedicación, buscando siempre ofrecer la mejor experiencia aromática y decorativa para tu hogar o negocio. Creemos en la luz, la calma y el trabajo artesanal.
+        </p>
+    </section>
+
+    <section id="contacto">
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="contacto-info">
+            <p>Estamos aquí para atender tus dudas sobre nuestros catálogos.</p>
+            <p>📍 <strong>Ubicación:</strong> San José, Costa Rica (Sujeto a cita previa)</p>
+            <p>📧 <strong>Correo:</strong> info@ande-velas.vercel.app</p>
+            <p>📱 <strong>WhatsApp:</strong> +506 0000-0000</p>
+            <p>🕒 <strong>Horario:</strong> Lunes a Viernes de 8:00 AM a 5:00 PM</p>
+        </div>
+    </section>
+
+    <section id="politicas">
+        <h2 class="section-title">Políticas de Privacidad y Uso Legal</h2>
+        <div class="politicas-contenido">
+            <h3>1. Naturaleza del Sitio</h3>
+            <p>El dominio ande-velas.vercel.app opera de manera estrictamente informativa como un catálogo digital. No recolectamos información de tarjetas de crédito ni procesamos pagos en línea.</p>
+            
+            <h3>2. Uso de Datos</h3>
+            <p>Si el usuario decide contactarnos vía correo electrónico o teléfono, sus datos serán utilizados exclusivamente para dar respuesta a su consulta. No compartimos, vendemos ni distribuimos información de contacto a terceros.</p>
+            
+            <h3>3. Cookies</h3>
+            <p>Este sitio web puede utilizar cookies técnicas básicas proporcionadas por nuestra plataforma de alojamiento para asegurar el correcto funcionamiento técnico de la página. No utilizamos cookies de rastreo de terceros.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Velas Ande. Todos los derechos reservados. | Costa Rica.</p>
+        <p class="footer-legal">
+            <strong>Anunciante Verificado Google Ads:</strong> Joao Da Silva Pereira <br>
+            Documento de Identidad: 10941802709
+        </p>
+    </footer>
+
+</body>
+</html>
